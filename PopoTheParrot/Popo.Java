@@ -30,7 +30,7 @@ class Parrot {
 }
 
 public class Popo {
-    public static void main(String [] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         System.out.print("Let name your new parrot: ");
         String name = sc.nextLine();
@@ -38,5 +38,6 @@ public class Popo {
         myParrot.greeting();
         myParrot.grows();
         myParrot.greeting();
+        sc.close();
     }
 }
