@@ -1,0 +1,9 @@
+orange
+red
+cyan
+blue
+green
+yellow
+gray
+violet
+black
