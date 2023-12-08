@@ -1,0 +1,1 @@
+jar cfm RockPaperScissors.jar manifest.txt *.class
