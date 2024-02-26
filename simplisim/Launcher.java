@@ -10,7 +10,9 @@ import java.awt.*;
  * You can then play them in the game eg., Eating, Sleeping, Exercise, etc.
  * 
  * Available Features:
- *   - Create and save your characters into an obj file
+ *      - Create and save your characters into an obj file
+ *      - Load your character from an obj file
+ *      - Play your character in the game (life management)
  * 
  * @author Fire Of Ender
  */
