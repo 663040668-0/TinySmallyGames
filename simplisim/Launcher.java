@@ -1,7 +1,6 @@
 package simplisim;
 
 import javax.swing.*;
-import java.awt.*;
 
 /*
  * What's SimpliSim?
@@ -19,7 +18,7 @@ import java.awt.*;
 
 /**
  * This class is the launcher for the game <strong>SimpliSim</strong>.
- * which will {@code createAndShowGUI} from the {@link CharacterCreator} class extended {@link JFrame}.
+ * which will {@code createAndShowGUI} from the {@link StartMenu} class extended {@link JFrame}.
  * 
  * @author Fire Of Ender
  */
@@ -28,8 +27,6 @@ public class Launcher {
     // Constants
     private static final String TITLE = "SimpliSim";
     private static final String SAVES_LOCATION = "./saves";
-    private static final float WINDOW_RATIO = 3 / 2f;
-    private static final float WINDOW_WIDTH_BY_SCREEN_WIDTH = 3 / 5f;
 
     // Run in thread-safe mode
     public static void main(String[] args) {
@@ -41,24 +38,9 @@ public class Launcher {
         });
     }
 
-    // Create and show GUI from CharacterCreator class
+    // Create and show GUI from StartMenu class
     public static void createAndShowGUI() {
-        // Start with character creation
-        CharacterCreator characterCreator = new CharacterCreator(TITLE, getWindowSize());
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                JOptionPane.showMessageDialog(null, characterCreator.toString());
-            }
-        });
-    }
-
-    // Other methods
-    private static Dimension getWindowSize() {
-        double screenWidth = Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-        double windowWidth = screenWidth * WINDOW_WIDTH_BY_SCREEN_WIDTH;
-        double windowHeight = windowWidth / WINDOW_RATIO;
-
-        return new Dimension((int) windowWidth, (int) windowHeight);
+        // Run start menu
+        StartMenu startMenu = new StartMenu(TITLE);
     }
 }

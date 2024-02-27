@@ -3,22 +3,23 @@ package simplisim;
 import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.event.*;
+import simplisim.util.*;
 
 /**
  * This class will create and show GUI of what can be done to create a {@link Character}.
  * This class extends {@link JFrame}.
  */
 
-public class CharacterCreator extends JFrame implements ActionListener {
+public class CharacterCreator extends JFrame implements ActionListener, ItemListener {
     // Attributes
     protected String status;
     protected Dimension windowSize;
 
     // Constructor
-    public CharacterCreator(String gameTitle, Dimension windowSize) {
+    public CharacterCreator(String gameTitle) {
         super(gameTitle);
         this.status = "Creating character";
-        this.windowSize = windowSize;
+        this.windowSize = GameWindowDimension.getWindowSize();
         this.addMenus();
         this.addComponents();
         this.addListeners();
@@ -83,7 +84,7 @@ public class CharacterCreator extends JFrame implements ActionListener {
 
     protected void handleExitMenuItem() {
         // TODO : Check if player saved character
-        System.exit(0);
+        dispose();
     }
 
     // Other methods
